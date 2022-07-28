@@ -16,7 +16,9 @@ fronts = [secret_front, other_front]
 routes = {
     '/': Index(),
     '/page/': Page(),
+    '/contact/': Contact(),
     # '/examples/': Examples(),
-    # '/contact/': Contact(),
+
+
     # '/another_page/': Another_page(),
 }
