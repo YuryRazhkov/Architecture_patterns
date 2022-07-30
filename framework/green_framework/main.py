@@ -1,6 +1,6 @@
 from quopri import decodestring
-from requests import GetRequests, PostRequests
 
+from requests import GetRequests, PostRequests
 
 
 class PageNotFound404:
@@ -9,7 +9,6 @@ class PageNotFound404:
 
 
 class Framework:
-
     """Класс Framework - основа фреймворка"""
 
     def __init__(self, routes_obj, fronts_obj):
