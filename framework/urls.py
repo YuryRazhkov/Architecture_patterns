@@ -19,7 +19,9 @@ routes = {
     '/index/': Index(),
     '/page/': Page(),
     '/contact/': Contact(),
-    # '/examples/': Examples(),
-    #
-    # '/another_page/': Another_page(),
+    '/courses-list/': CoursesList(),
+    '/create-course/': CreateCourse(),
+    '/create-category/': CreateCategory(),
+    '/category-list/': CategoryList(),
+    '/copy-course/': CopyCourse(),
 }
