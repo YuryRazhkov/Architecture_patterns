@@ -1,20 +1,24 @@
 from green_framework.templator import render
+from patterns.structural_patterns import AppRoute
 from patterns.сreational_patterns import Engine, Logger
 
 site = Engine()
 logger = Logger('main')
 
+routes = {}
 
+@AppRoute(routes=routes, url='/')
 class Index:
     def __call__(self, request):
         return '200 OK', render('index.html', date=request.get('date', None))
 
 
+@AppRoute(routes=routes, url='/page/')
 class Page:
     def __call__(self, request):
         return '200 OK', render('page.html', date=request.get('date', None))
 
-
+@AppRoute(routes=routes, url='/contact/')
 class Contact:
     def __call__(self, request):
         return '200 OK', render('contact.html', date=request.get('date', None))
@@ -27,6 +31,7 @@ class NotFound404:
 
 
 # контроллер - список курсов
+@AppRoute(routes=routes, url='/courses-list/')
 class CoursesList:
     def __call__(self, request):
         logger.log('Список курсов')
@@ -41,6 +46,7 @@ class CoursesList:
 
 
 # контроллер - создать курс
+@AppRoute(routes=routes, url='/create-course/')
 class CreateCourse:
     category_id = -1
 
@@ -77,6 +83,7 @@ class CreateCourse:
 
 
 # контроллер - создать категорию
+@AppRoute(routes=routes, url='/create-category/')
 class CreateCategory:
     def __call__(self, request):
 
@@ -106,6 +113,7 @@ class CreateCategory:
 
 
 # контроллер - список категорий
+@AppRoute(routes=routes, url='/category-list/')
 class CategoryList:
     def __call__(self, request):
         logger.log('Список категорий')
@@ -114,6 +122,7 @@ class CategoryList:
 
 
 # контроллер - копировать курс
+@AppRoute(routes=routes, url='/copy-course/')
 class CopyCourse:
     def __call__(self, request):
         request_params = request['request_params']
