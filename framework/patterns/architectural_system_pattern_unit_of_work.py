@@ -9,6 +9,7 @@ class UnitOfWork:
     # Работает с конкретным потоком
     current = local()
 
+
     def __init__(self):
         self.new_objects = []
         self.dirty_objects = []
