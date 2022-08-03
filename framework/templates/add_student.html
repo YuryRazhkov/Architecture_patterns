@@ -19,18 +19,23 @@
 	</div>
     <h1>Добавление студента на курс</h1>
 
+
 {#    <form method="post">#}
 <form action="" method="post">
-        <select size="3" name="course_name">
-            {% for item in courses %}
-            <option value="{{item.name}}">{{item.name}}</option>
-            {% endfor %}
-        </select>
-        <select size="3" name="student_name">
-            {% for item in students %}
-            <option value="{{item.name}}">{{item.name}}</option>
-            {% endfor %}
-        </select>
+
+{#    Помогите пожалуйста разобраться. Закоментированная форма не отдает данные.#}
+{#        <select size="3" name="course_name">#}
+{#            {% for item in courses %}#}
+{#            <option value="{{item.name}}">{{item.name}}</option>#}
+{#            {% endfor %}#}
+{#        </select>#}
+{#        <select size="3" name="student_name">#}
+{#            {% for item in students %}#}
+{#            <option value="{{item.name}}">{{item.name}}</option>#}
+{#            {% endfor %}#}
+{#        </select>#}
+     <input type="text" name="course_name" placeholder="Название курса">
+     <input type="text" name="student_name" placeholder="Студент">
         <button type="submit">Записать</button>
     </form>
 {% endblock %}
