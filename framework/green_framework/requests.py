@@ -1,6 +1,4 @@
 # get requests
-
-
 class GetRequests:
 
     @staticmethod
@@ -47,11 +45,7 @@ class PostRequests:
         content_length = int(content_length_data) if content_length_data else 0
         print(content_length)
         # считываем данные, если они есть
-        # env['wsgi.input'] -> <class '_io.BufferedReader'>
-        # запускаем режим чтения
-
-        data = env['wsgi.input'].read(content_length) \
-            if content_length > 0 else b''
+        data = env['wsgi.input'].read(content_length) if content_length > 0 else b''
         return data
 
     def parse_wsgi_input_data(self, data: bytes) -> dict:
