@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}
+Создание курса
+{% endblock %}
+{% block style %}
+	{% include "inc-style.html" %}
+{% endblock %}
+{% block menu %}
+	{% include "inc-menu.html" %}
+{% endblock %}
+{% block body %}
+	<div>
+		<li>
+			<a href="/student-list/">Список студентов</a>
+		</li>
+		<li>
+			<a href="/create-student/">Создать студента</a>
+		</li>
+	</div>
+    <h1>Добавление студента на курс</h1>
+
+
+{#    <form method="post">#}
+<form action="" method="post">
+
+    Помогите пожалуйста разобраться. Закоментированная в коде форма не отдает данные.
+{#    Эта форма не отдает данные.
+
+падает ошибка
+Traceback (most recent call last):.....
+...File "/media/yury/Win10/GB/Architecture_patterns/framework/views.py", line 204, in create_obj
+    course_name = data['course_name']
+KeyError: 'course_name'
+Post запрос приходит путстой {}
+
+Принтанул request^
+class CreateView(TemplateView):
+    template_name = 'create.html'
+
+    @staticmethod
+    def get_request_data(request):
+        print(request, '---', request['data'])
+
+>>{'method': 'POST', 'data': {}, 'date': datetime.date(2022, 8, 4), 'key': 'key'} --- {}
+
+Помогите пожалуйста понять в чем дело
+#}
+{#        <select size="3" name="course_name">#}
+{#            {% for item in courses %}#}
+{#            <option value="{{item.name}}">{{item.name}}</option>#}
+{#            {% endfor %}#}
+{#        </select>#}
+{#        <select size="3" name="student_name">#}
+{#            {% for item in students %}#}
+{#            <option value="{{item.name}}">{{item.name}}</option>#}
+{#            {% endfor %}#}
+{#        </select>#}
+     <input type="text" name="course_name" placeholder="Название курса">
+     <input type="text" name="student_name" placeholder="Студент">
+        <button type="submit">Записать</button>
+    </form>
+{% endblock %}
