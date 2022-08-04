@@ -23,7 +23,28 @@
 {#    <form method="post">#}
 <form action="" method="post">
 
-{#    Помогите пожалуйста разобраться. Закоментированная форма не отдает данные.#}
+    Помогите пожалуйста разобраться. Закоментированная в коде форма не отдает данные.
+{#    Эта форма не отдает данные.
+
+падает ошибка
+Traceback (most recent call last):.....
+...File "/media/yury/Win10/GB/Architecture_patterns/framework/views.py", line 204, in create_obj
+    course_name = data['course_name']
+KeyError: 'course_name'
+Post запрос приходит путстой {}
+
+Принтанул request^
+class CreateView(TemplateView):
+    template_name = 'create.html'
+
+    @staticmethod
+    def get_request_data(request):
+        print(request, '---', request['data'])
+
+>>{'method': 'POST', 'data': {}, 'date': datetime.date(2022, 8, 4), 'key': 'key'} --- {}
+
+Помогите пожалуйста понять в чем дело
+#}
 {#        <select size="3" name="course_name">#}
 {#            {% for item in courses %}#}
 {#            <option value="{{item.name}}">{{item.name}}</option>#}
